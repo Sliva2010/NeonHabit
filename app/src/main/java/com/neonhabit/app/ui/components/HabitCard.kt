@@ -18,6 +18,7 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.neonhabit.app.domain.model.Habit
@@ -201,7 +202,7 @@ fun NeonIconButton(
     
     Box(
         modifier = modifier
-            .size(size)
+            .size(width = size, height = size)
             .scale(scale)
             .clip(RoundedCornerShape(12.dp))
             .background(

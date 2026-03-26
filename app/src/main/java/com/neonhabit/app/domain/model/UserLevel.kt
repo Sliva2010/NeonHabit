@@ -52,7 +52,7 @@ data class UserLevel(
          * Формула: 100 * level^1.5
          */
         fun calculateRequiredExp(level: Int): Int {
-            return (100 * kotlin.math.pow(level.toDouble(), 1.5)).toInt()
+            return (100 * level.toDouble().pow(1.5)).toInt()
         }
     }
 }

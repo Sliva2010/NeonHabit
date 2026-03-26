@@ -226,14 +226,14 @@ fun NeonText(
     showGlow: Boolean = true
 ) {
     val glowAlpha by remember { mutableStateOf(0.5f) }
-    
+
     Box(modifier = modifier) {
         // Слой свечения
         if (showGlow) {
             Text(
                 text = text,
                 color = colors.first().copy(alpha = glowAlpha),
-                fontSize = fontSize,
+                fontSize = fontSize.value.sp,
                 fontWeight = fontWeight,
                 modifier = Modifier.blur(8.dp)
             )
@@ -241,8 +241,8 @@ fun NeonText(
         // Основной текст
         Text(
             text = text,
-            color = Brush.horizontalGradient(colors),
-            fontSize = fontSize,
+            color = colors.first(),
+            fontSize = fontSize.value.sp,
             fontWeight = fontWeight
         )
     }

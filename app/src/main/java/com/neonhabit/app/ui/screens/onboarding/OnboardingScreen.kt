@@ -1,5 +1,6 @@
 package com.neonhabit.app.ui.screens.onboarding
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.pager.HorizontalPager
@@ -24,6 +25,7 @@ import com.neonhabit.app.ui.theme.NeonPurple
 import com.neonhabit.app.ui.theme.NeonWhite
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnboardingScreen(
     onFinished: () -> Unit

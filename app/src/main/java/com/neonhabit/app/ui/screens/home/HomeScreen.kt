@@ -3,6 +3,7 @@ package com.neonhabit.app.ui.screens.home
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -193,7 +194,7 @@ fun HeaderSection(
         Column {
             Text(
                 text = "NeonHabit",
-                color = Brush.horizontalGradient(listOf(NeonPink, NeonPurple)),
+                color = NeonPink,
                 fontWeight = FontWeight.Bold,
                 fontSize = 28.sp
             )
@@ -203,7 +204,7 @@ fun HeaderSection(
                 fontSize = 14.sp
             )
         }
-        
+
         // Мини-прогресс уровня
         LevelProgressBar(
             currentLevel = userLevel.level,
@@ -279,7 +280,7 @@ fun QuickActionButton(
     
     Column(
         modifier = modifier
-            .weight(1f)
+            .then(Modifier.weight(1f))
             .scale(scale)
             .clip(RoundedCornerShape(16.dp))
             .background(
@@ -480,7 +481,7 @@ fun LevelUpDialog(
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = "НОВЫЙ УРОВЕНЬ!",
-                    color = Brush.horizontalGradient(listOf(NeonPink, NeonPurple)),
+                    color = NeonPink,
                     fontWeight = FontWeight.Bold,
                     fontSize = 28.sp
                 )
