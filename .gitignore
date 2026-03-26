@@ -1,0 +1,42 @@
+# Gradle
+.gradle/
+build/
+*/build/
+local.properties
+
+# Android Studio
+*.iml
+.idea/
+.DS_Store
+*.hprof
+
+# Keystore files (если есть)
+*.jks
+*.keystore
+!keystore.properties
+
+# Google Services
+google-services.json
+
+# Fabric
+.crashlytics/
+
+# NDK
+obj/
+
+# ProGuard
+proguard/
+
+# Log Files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# APK
+*.apk
+*.aab
+
+# Files for the CI/CD
+artifacts/
