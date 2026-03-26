@@ -94,7 +94,7 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     // Biometric
-    implementation("androidx.biometric:biometric:1.3.0")
+    implementation("androidx.biometric:biometric:1.1.0")
 
     // WorkManager для уведомлений
     implementation("androidx.work:work-runtime-ktx:2.9.0")
