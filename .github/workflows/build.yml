@@ -45,9 +45,18 @@ jobs:
           gradle-version: 8.2
           cache-read-only: false
 
-      # Шаг 4: Делаем gradlew исполняемым
-      - name: Сделать gradlew исполняемым
-        run: chmod +x gradlew
+      # Шаг 4: Создаём gradlew если не существует и делаем исполняемым
+      - name: Setup gradlew
+        run: |
+          if [ ! -f gradlew ]; then
+            echo "gradlew not found, creating..."
+            cat > gradlew << 'GRADLEW_SCRIPT'
+#!/bin/sh
+exec java -jar gradle/wrapper/gradle-wrapper.jar "$@"
+GRADLEW_SCRIPT
+          fi
+          chmod +x gradlew
+          ls -la gradlew
 
       # Шаг 5: Кэшируем зависимости
       - name: Кэширование зависимостей Gradle
