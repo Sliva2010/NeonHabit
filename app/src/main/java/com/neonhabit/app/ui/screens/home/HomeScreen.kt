@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
@@ -280,7 +281,7 @@ fun QuickActionButton(
     
     Column(
         modifier = modifier
-            .then(Modifier.weight(1f))
+            .weight(1f)
             .scale(scale)
             .clip(RoundedCornerShape(16.dp))
             .background(
