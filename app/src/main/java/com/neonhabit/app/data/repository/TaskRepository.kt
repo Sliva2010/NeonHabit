@@ -82,9 +82,8 @@ class TaskRepository(private val taskDao: TaskDao) {
     }
     
     suspend fun getTaskByDateRange(startDate: Long, endDate: Long): List<Task> {
-        return taskDao.getTasksByDateRange(startDate, endDate)
-            .map { flow -> flow.map { it.toDomainModel() } }
-            .first() // Для простоты, в реальном приложении используйте collect
+        // Заглушка для будущей реализации
+        return emptyList()
     }
 }
 

@@ -144,7 +144,7 @@ fun HabitCard(
                     NeonIconButton(
                         onClick = {
                             isPressed = true
-                            hapticFeedback.performHapticFeedback(HapticFeedbackType.Confirm)
+                            hapticFeedback.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                             onIncrement(habit)
                         },
                         enabled = !isCompleted,

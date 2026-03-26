@@ -14,7 +14,9 @@ import androidx.compose.ui.composed
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
@@ -205,9 +207,10 @@ fun NeonCard(
                 )
             }
             .background(NeonDarkGray)
-            .padding(16.dp),
-        content = content
-    )
+            .padding(16.dp)
+    ) {
+        content()
+    }
 }
 
 /**

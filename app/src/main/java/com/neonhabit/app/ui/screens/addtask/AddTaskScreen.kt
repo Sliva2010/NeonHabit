@@ -374,11 +374,7 @@ fun CategorySection(
                     containerColor = NeonDarkGray,
                     labelColor = NeonWhite
                 ),
-                shape = RoundedCornerShape(20.dp),
-                border = if (isSelected) null else FilterChipDefaults.filterChipBorder(
-                    borderColor = NeonLightGray,
-                    selectedBorderColor = category.color
-                )
+                shape = RoundedCornerShape(20.dp)
             )
         }
     }

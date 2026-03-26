@@ -86,7 +86,7 @@ fun TaskCard(
                     Checkbox(
                         checked = task.isCompleted,
                         onCheckedChange = {
-                            hapticFeedback.performHapticFeedback(HapticFeedbackType.Confirm)
+                            hapticFeedback.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                             onToggleComplete(task)
                         },
                         colors = CheckboxDefaults.colors(
@@ -180,13 +180,6 @@ fun TaskCard(
             modifier = Modifier
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(16.dp))
-                .graphicsLayer {
-                    shape = RoundedCornerShape(16.dp).createOutline(
-                        size = this@Box.size,
-                        layoutDirection = layoutDirection,
-                        density = this
-                    ).asPath()
-                }
                 .background(
                     Brush.verticalGradient(
                         listOf(categoryColor.copy(alpha = 0.3f), Color.Transparent)

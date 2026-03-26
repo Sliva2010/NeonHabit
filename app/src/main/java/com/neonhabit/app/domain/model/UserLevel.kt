@@ -1,6 +1,7 @@
 package com.neonhabit.app.domain.model
 
 import kotlinx.serialization.Serializable
+import kotlin.math.pow
 
 /**
  * Модель уровня пользователя

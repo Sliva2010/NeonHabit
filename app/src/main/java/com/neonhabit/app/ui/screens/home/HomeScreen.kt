@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.neonhabit.app.domain.model.Task
+import com.neonhabit.app.domain.model.UserLevel
 import com.neonhabit.app.ui.components.*
 import com.neonhabit.app.ui.theme.*
 
@@ -414,11 +415,10 @@ fun AnimatedTaskItem(
     onDelete: (Task) -> Unit
 ) {
     var isVisible by remember { mutableStateOf(true) }
-    
+
     AnimatedVisibility(
         visible = isVisible,
-        exit = fadeOut() + shrinkHorizontally(),
-        modifier = Modifier.animateItemPlacement()
+        exit = fadeOut() + shrinkHorizontally()
     ) {
         TaskCard(
             task = task,
@@ -440,21 +440,14 @@ fun AnimatedTaskItem(
 fun LevelUpDialog(
     onDismiss: () -> Unit
 ) {
-    var scale by remember { mutableFloatStateOf(0.5f) }
-    
-    LaunchedEffect(Unit) {
-        animateFloat(
-            initialValue = 0.5f,
-            targetValue = 1f,
-            animationSpec = spring(
-                dampingRatio = Spring.DampingRatioMediumBouncy,
-                stiffness = Spring.StiffnessLow
-            )
-        ) { value ->
-            scale = value
-        }
-    }
-    
+    val scale by animateFloatAsState(
+        targetValue = 1f,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioMediumBouncy,
+            stiffness = Spring.StiffnessLow
+        )
+    )
+
     Box(
         modifier = Modifier
             .fillMaxSize()
